@@ -27,3 +27,26 @@ instance needs to change.
 + Dependencies between singletons have undefined behaviour.
 
 + It's hard to instantiate subclasses. (But not impossible, one way is to have a collection of subclasses in the parent.)
+
+# Example 01 #
+
+```c++
+class Singleton {
+private:
+    static Singleton* instance;
+
+    // Private constructor so that no objects can be created.
+    Singleton() {
+        // do something
+    }
+
+public:
+    // accessor
+    static Singleton* getInstance() {
+        if (instance == nullptr) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+};
+```
