@@ -90,7 +90,7 @@ public class Client {
 }
 ```
 
-## Example 02 (with adapter)##
+## Example 02 (with adapter) ##
 
 ```java
 abstract class MediaPlayer {
@@ -215,7 +215,7 @@ int main() {
 }
 ```
 
-## Example 04 (with adapter)##
+## Example 04 (with adapter) ##
 
 ```c++
 class DrawingAPI {
