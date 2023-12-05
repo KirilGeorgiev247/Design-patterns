@@ -6,7 +6,7 @@
 
 + **Simplicity**: It’s easier to understand and implement compared to more complex patterns like the Abstract Factory.
 
-+ **Flexibility*: Allows for flexibility in creating objects without having to specify their exact classes.
++ **Flexibility**: Allows for flexibility in creating objects without having to specify their exact classes.
 
 + **Extensibility**: New product types can be introduced by extending the creator class with minimal changes to existing code.
 
