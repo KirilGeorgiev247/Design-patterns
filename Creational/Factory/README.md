@@ -25,8 +25,11 @@
 *Extra*
 
 + we don't know how the object is created and we don't know how to release the memory if needed.
+  
 	--> That's why we want to return RAII object(unique_pointer)
+  
 	--> Other fix is to implement release method in the factory or in the object (the factory knows the context)
+  
 	--> we can attach on the object refference to the factory but we distrupt the Single Responsibility principle and the life cycle of the object must now outlive the factory.
 
 # Example 01 #
