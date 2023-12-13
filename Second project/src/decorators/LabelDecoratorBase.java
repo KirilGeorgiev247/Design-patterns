@@ -1,8 +1,11 @@
 package decorators;
 
 import labels.Label;
+import transformations.TextTransformation;
 
-public class LabelDecoratorBase implements Label {
+import java.util.List;
+
+public abstract class LabelDecoratorBase implements Label {
     private Label subject;
 
     public LabelDecoratorBase(Label subject) {
@@ -11,7 +14,7 @@ public class LabelDecoratorBase implements Label {
     public static Label removeDecoratorFrom(Label label, Class<? extends LabelDecoratorBase> decoratorType) {
         // Check if the label is null or not a decorator, in which case there's nothing to do
         if (!(label instanceof LabelDecoratorBase currentDecorator)) {
-            return label;
+            throw new IllegalArgumentException("Label cannot be null or undecorated!");
         }
 
         Label innerLabel = currentDecorator.subject;
@@ -38,7 +41,7 @@ public class LabelDecoratorBase implements Label {
             // This is the decorator to remove
             return subject;
         }
-        else if( LabelDecoratorBase.class.isAssignableFrom(subject.getClass()) ) {
+        else if(LabelDecoratorBase.class.isAssignableFrom(subject.getClass()) ) {
             // The subject is itself a decorator.
             // Try to remove decoratorType from it.
             // Note that we may need to reassign subject, because the
@@ -63,4 +66,6 @@ public class LabelDecoratorBase implements Label {
     public String getText() {
         return subject.getText();
     }
+
+    public abstract void setTextTransformation(List<TextTransformation> textTransformations);
 }

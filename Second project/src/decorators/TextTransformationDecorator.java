@@ -3,6 +3,9 @@ package decorators;
 import labels.Label;
 import transformations.TextTransformation;
 
+import java.util.List;
+
+// Ask for default c-r with no params
 public class TextTransformationDecorator extends LabelDecoratorBase {
     protected TextTransformation textTransformation;
     public TextTransformationDecorator(Label subject, TextTransformation textTransformation) {
@@ -15,7 +18,8 @@ public class TextTransformationDecorator extends LabelDecoratorBase {
         return textTransformation.transform(super.getText());
     }
 
-    public void setTextTransformation(TextTransformation textTransformation) {
-        this.textTransformation = textTransformation;
+    @Override
+    public void setTextTransformation(List<TextTransformation> textTransformation) {
+        this.textTransformation = textTransformation.getFirst();
     }
 }

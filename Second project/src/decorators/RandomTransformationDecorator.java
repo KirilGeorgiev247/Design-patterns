@@ -20,7 +20,8 @@ public class RandomTransformationDecorator extends LabelDecoratorBase {
             .transform(super.getText());
     }
 
-    public void setTextTransformations(List<TextTransformation> textTransformations) {
+    @Override
+    public void setTextTransformation(List<TextTransformation> textTransformations) {
         this.textTransformations = textTransformations;
     }
 
