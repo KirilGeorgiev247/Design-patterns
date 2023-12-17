@@ -1,7 +1,7 @@
 package composite;
 
 import decorators.LabelDecoratorBase;
-import labels.Label;
+import label.Label;
 import transformations.TextTransformation;
 
 import java.util.LinkedList;

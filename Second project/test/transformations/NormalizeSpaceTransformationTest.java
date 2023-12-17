@@ -1,7 +1,7 @@
 package transformations;
 
-import labels.Label;
-import labels.SimpleLabel;
+import label.Label;
+import label.SimpleLabel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package labels;
+package label;
 
 public class RichLabel extends SimpleLabel {
     private final String color;

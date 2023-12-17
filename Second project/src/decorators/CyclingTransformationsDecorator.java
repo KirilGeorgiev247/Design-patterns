@@ -1,6 +1,6 @@
 package decorators;
 
-import labels.Label;
+import label.Label;
 import transformations.TextTransformation;
 
 import java.util.List;

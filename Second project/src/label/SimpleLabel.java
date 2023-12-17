@@ -1,4 +1,4 @@
-package labels;
+package label;
 
 public class SimpleLabel implements Label {
     private final String value;
