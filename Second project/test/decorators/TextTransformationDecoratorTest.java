@@ -103,10 +103,10 @@ public class TextTransformationDecoratorTest {
             LabelDecoratorBase.removeDecoratorFrom(decorateReversed, TextTransformationDecorator.class);
 
         assertEquals(expected, prevValue.getText(),
-            "Composited styles should be applied correctly!");
+            "Composited styles should be removed correctly!");
 
         assertEquals(expected, prevValueStatic.getText(),
-            "Composited styles should be applied correctly!");
+            "Composited styles should be removed correctly!");
     }
 
     @Test
@@ -115,9 +115,6 @@ public class TextTransformationDecoratorTest {
 
         LabelDecoratorBase textTransformationDecorator =
             new TextTransformationDecorator(testSubject, capitalizeTransformation);
-
-        Label prevValue =
-            textTransformationDecorator.removeDecorator(TextTransformationDecorator.class);
 
         assertThrows(IllegalArgumentException.class,
             () -> textTransformationDecorator.removeDecorator(RandomTransformationDecorator.class),

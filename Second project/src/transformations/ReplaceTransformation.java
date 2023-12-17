@@ -7,8 +7,15 @@ public class ReplaceTransformation extends ValidTextTransformation {
     private final String replacement;
 
     public ReplaceTransformation(String wordToReplace, String replacement) {
-        this.wordToReplace = wordToReplace;
-        this.replacement = replacement;
+        if (wordToReplace == null || wordToReplace.isBlank() || wordToReplace.isEmpty() || replacement == null ||
+            replacement.isEmpty() || replacement.isBlank()) {
+            this.wordToReplace = "";
+            this.replacement = "";
+        }
+        else {
+            this.wordToReplace = wordToReplace;
+            this.replacement = replacement;
+        }
     }
 
     @Override
