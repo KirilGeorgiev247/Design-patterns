@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 // TODO: how to request from inputStream
 public class ProxyLabel implements Label {
     private final static int DEFAULT_TIMEOUT = 5;
-    private static int timeOutCounter;
+    private int timeOutCounter;
     private final BufferedReader reader;
     private String value;
     private final int timeOut;
