@@ -1,6 +1,6 @@
 package label.help;
 
-import composite.CompositeTransformation;
+import decorators.composite.CompositeTransformationDecorator;
 import label.Label;
 import label.SimpleLabel;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +26,7 @@ public class HelpExtendedLabelTest {
         CensorTransformation censorTransformation = new CensorTransformation("t");
         DecorateTransformation decorateTransformation = new DecorateTransformation();
 
-        CompositeTransformation compositeTransformation = new CompositeTransformation(testSubject);
+        CompositeTransformationDecorator compositeTransformation = new CompositeTransformationDecorator(testSubject);
 
         compositeTransformation.add(capitalizeTransformation);
         compositeTransformation.add(censorTransformation);

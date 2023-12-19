@@ -141,5 +141,34 @@ public class TextTransformationDecoratorTest {
             "Changed transformation should be applied to the label!");
     }
 
-
+    @Test
+    void testIfInsideDecoratorIsRemovedSuccessfully() {
+//        CapitalizeTransformation capitalizeTransformation = new CapitalizeTransformation();
+//        CensorTransformation censorTransformation = new CensorTransformation("t");
+//        DecorateTransformation decorateTransformation = new DecorateTransformation();
+//
+//        Label capitalize =
+//            new TextTransformationDecorator(testSubject, capitalizeTransformation);
+//        Label censor =
+//            new TextTransformationDecorator(capitalize, censorTransformation);
+//        LabelDecoratorBase decorate =
+//            new TextTransformationDecorator(censor, decorateTransformation);
+//
+//        String expected = capitalizeTransformation.transform(testSubject.getText());
+//
+//        Label prevValue = ((LabelDecoratorBase) decorate.removeDecorator(TextTransformationDecorator.class))
+//            .removeDecorator(TextTransformationDecorator.class);
+//
+//        LabelDecoratorBase decorateReversed =
+//            (LabelDecoratorBase) LabelDecoratorBase.removeDecoratorFrom(decorate, TextTransformationDecorator.class);
+//
+//        Label prevValueStatic =
+//            LabelDecoratorBase.removeDecoratorFrom(decorateReversed, TextTransformationDecorator.class);
+//
+//        assertEquals(expected, prevValue.getText(),
+//            "Composited styles should be removed correctly!");
+//
+//        assertEquals(expected, prevValueStatic.getText(),
+//            "Composited styles should be removed correctly!");
+    }
 }

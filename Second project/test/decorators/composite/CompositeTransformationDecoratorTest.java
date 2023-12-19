@@ -1,4 +1,4 @@
-package composite;
+package decorators.composite;
 
 import decorators.CyclingTransformationsDecorator;
 import decorators.LabelDecoratorBase;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CompositeTransformationTest {
+public class CompositeTransformationDecoratorTest {
 
     private Label testSubject;
 
@@ -32,8 +32,8 @@ public class CompositeTransformationTest {
     void testIfOneTransformationIsAppliedCorrectly() {
         CapitalizeTransformation capitalizeTransformation = new CapitalizeTransformation();
 
-        CompositeTransformation compositeTransformationDecorator =
-            new CompositeTransformation(testSubject);
+        CompositeTransformationDecorator compositeTransformationDecorator =
+            new CompositeTransformationDecorator(testSubject);
 
         compositeTransformationDecorator.add(capitalizeTransformation);
 
@@ -48,7 +48,7 @@ public class CompositeTransformationTest {
         CensorTransformation censorTransformation = new CensorTransformation("t");
         DecorateTransformation decorateTransformation = new DecorateTransformation();
 
-        CompositeTransformation compositeTransformation = new CompositeTransformation(testSubject);
+        CompositeTransformationDecorator compositeTransformation = new CompositeTransformationDecorator(testSubject);
 
         compositeTransformation.add(capitalizeTransformation);
         compositeTransformation.add(censorTransformation);
@@ -67,15 +67,15 @@ public class CompositeTransformationTest {
         CapitalizeTransformation capitalizeTransformation = new CapitalizeTransformation();
 
         LabelDecoratorBase compositeTransformation =
-            new CompositeTransformation(testSubject);
+            new CompositeTransformationDecorator(testSubject);
 
         compositeTransformation.setTextTransformation(List.of(capitalizeTransformation));
 
         Label prevValue =
-            compositeTransformation.removeDecorator(CompositeTransformation.class);
+            compositeTransformation.removeDecorator(CompositeTransformationDecorator.class);
 
         Label prevValueStatic =
-            LabelDecoratorBase.removeDecoratorFrom(compositeTransformation, CompositeTransformation.class);
+            LabelDecoratorBase.removeDecoratorFrom(compositeTransformation, CompositeTransformationDecorator.class);
 
         assertEquals(testSubject.getText(),
             prevValue.getText(),
@@ -92,17 +92,17 @@ public class CompositeTransformationTest {
         CensorTransformation censorTransformation = new CensorTransformation("t");
         DecorateTransformation decorateTransformation = new DecorateTransformation();
 
-        LabelDecoratorBase compositeTransformation = new CompositeTransformation(testSubject);
+        LabelDecoratorBase compositeTransformation = new CompositeTransformationDecorator(testSubject);
 
         compositeTransformation.setTextTransformation(List.of(capitalizeTransformation, censorTransformation, decorateTransformation));
 
         String expected = testSubject.getText();
 
         Label prevValue =
-            compositeTransformation.removeDecorator(CompositeTransformation.class);
+            compositeTransformation.removeDecorator(CompositeTransformationDecorator.class);
 
         Label prevValueStatic =
-            LabelDecoratorBase.removeDecoratorFrom(compositeTransformation, CompositeTransformation.class);
+            LabelDecoratorBase.removeDecoratorFrom(compositeTransformation, CompositeTransformationDecorator.class);
 
         assertEquals(expected, prevValue.getText(),
             "Composited styles should be removed correctly!");
@@ -116,7 +116,7 @@ public class CompositeTransformationTest {
         CapitalizeTransformation capitalizeTransformation = new CapitalizeTransformation();
 
         LabelDecoratorBase compositeTransformation =
-            new CompositeTransformation(testSubject);
+            new CompositeTransformationDecorator(testSubject);
 
         compositeTransformation.setTextTransformation(List.of(capitalizeTransformation));
 
@@ -135,8 +135,8 @@ public class CompositeTransformationTest {
         CapitalizeTransformation capitalizeTransformation = new CapitalizeTransformation();
         DecorateTransformation decorateTransformation = new DecorateTransformation();
 
-        CompositeTransformation compositeTransformation =
-            new CompositeTransformation(testSubject);
+        CompositeTransformationDecorator compositeTransformation =
+            new CompositeTransformationDecorator(testSubject);
 
         compositeTransformation.add(capitalizeTransformation);
 
@@ -153,7 +153,7 @@ public class CompositeTransformationTest {
         DecorateTransformation decorateTransformation = new DecorateTransformation();
         ReplaceTransformation replaceTransformation = new ReplaceTransformation("t", "d");
 
-        CompositeTransformation compositeTransformation = new CompositeTransformation(testSubject);
+        CompositeTransformationDecorator compositeTransformation = new CompositeTransformationDecorator(testSubject);
         compositeTransformation.setTextTransformation(List.of(capitalizeTransformation, decorateTransformation, replaceTransformation));
         String first = compositeTransformation.getText();
         compositeTransformation.setTextTransformation(List.of(replaceTransformation, decorateTransformation, capitalizeTransformation));
