@@ -5,6 +5,7 @@ import transformations.TextTransformation;
 
 import java.util.List;
 
+// TODO: ask for remove
 public abstract class LabelDecoratorBase implements Label {
     private Label subject;
 
@@ -39,7 +40,7 @@ public abstract class LabelDecoratorBase implements Label {
 
     public Label removeDecorator(Class<? extends LabelDecoratorBase> decoratorType) {
 
-        if (this.getClass() == decoratorType) {
+        if (this.getClass() == decoratorType) { // && equals
             // This is the decorator to remove
             return subject;
         } else if (LabelDecoratorBase.class.isAssignableFrom(subject.getClass())) {

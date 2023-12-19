@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 // TODO: how to request from inputStream
+// scanner
 public class ProxyLabel implements Label {
     private final static int DEFAULT_TIMEOUT = 5;
     private int timeOutCounter;

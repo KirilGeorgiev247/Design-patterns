@@ -7,7 +7,7 @@ public class HelpExtendedLabel implements HelpLabel {
 
     private final Label label;
 
-    private final String helpText;
+    private final String helpText; // can be label
 
     public HelpExtendedLabel(String helpText, Label label) {
         if (label instanceof ProxyLabel) {
@@ -21,7 +21,7 @@ public class HelpExtendedLabel implements HelpLabel {
     }
     @Override
     public String getHelpText() {
-        return helpText;
+        return (helpText != null ? helpText : "");
     }
 
     @Override
