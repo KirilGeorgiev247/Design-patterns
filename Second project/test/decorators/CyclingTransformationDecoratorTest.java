@@ -15,6 +15,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class CyclingTransformationDecoratorTest {
+
+    private Label mockLabel;
     private TextTransformation mockTransformation1;
     private TextTransformation mockTransformation2;
     private TextTransformation mockTransformation3;
@@ -22,7 +24,7 @@ public class CyclingTransformationDecoratorTest {
 
     @BeforeEach
     void setUp() {
-        Label mockLabel = mock(Label.class);
+        mockLabel = mock(Label.class);
         mockTransformation1 = mock(TextTransformation.class);
         mockTransformation2 = mock(TextTransformation.class);
         mockTransformation3 = mock(TextTransformation.class);

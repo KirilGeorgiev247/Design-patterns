@@ -1,6 +1,8 @@
 package builder;
 
+import decorators.CyclingTransformationsDecorator;
 import decorators.DecoratorType;
+import decorators.RandomTransformationDecorator;
 import decorators.TextTransformationDecorator;
 import decorators.composite.CompositeTransformationDecorator;
 import label.Label;
@@ -8,12 +10,12 @@ import label.ProxyLabel;
 import label.RichLabel;
 import label.SimpleLabel;
 import label.help.HelpExtendedLabel;
+import random.CustomRandom;
 import transformations.TextTransformation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: ask if this is counting for dep inj
 public class LabelBuilder implements LabelBuilderAPI {
     private final List<TextTransformation> transformations = new ArrayList<>();
     private String text;
@@ -93,17 +95,15 @@ public class LabelBuilder implements LabelBuilderAPI {
 
     private Label decorate(Label label) {
         switch (decoratorType) {
-            case COMPOSITE -> {
-                label = new CompositeTransformationDecorator(label, transformations);
-                }
-            case CYCLING -> throw new RuntimeException("Not implemented");
-            case RANDOM -> throw new RuntimeException("Not implemented");
+            case COMPOSITE -> label = new CompositeTransformationDecorator(label, transformations);
+            case CYCLING -> label = new CyclingTransformationsDecorator(label, transformations);
+            case RANDOM -> label = new RandomTransformationDecorator(label, transformations, new CustomRandom());
             case SINGLE -> {
                 for (TextTransformation transformation : transformations) {
                     label = new TextTransformationDecorator(label, transformation);
                 }
             }
-        };
+        }
 
         return label;
     }

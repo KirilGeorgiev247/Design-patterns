@@ -4,14 +4,17 @@ import label.Label;
 import transformations.TextTransformation;
 
 import java.util.List;
-import java.util.Random;
+import java.util.random.RandomGenerator;
 
 public class RandomTransformationDecorator extends LabelDecoratorBase {
+    private final RandomGenerator randomGenerator;
     private List<TextTransformation> textTransformations;
 
-    public RandomTransformationDecorator(Label subject, List<TextTransformation> textTransformations) {
+    public RandomTransformationDecorator(Label subject, List<TextTransformation> textTransformations,
+                                         RandomGenerator randomGenerator) {
         super(subject);
         this.textTransformations = textTransformations;
+        this.randomGenerator = randomGenerator;
     }
 
     @Override
@@ -26,6 +29,6 @@ public class RandomTransformationDecorator extends LabelDecoratorBase {
     }
 
     private int getRandomIndex(int bound) {
-        return (new Random()).nextInt(0, bound);
+        return randomGenerator.nextInt(0, bound);
     }
 }

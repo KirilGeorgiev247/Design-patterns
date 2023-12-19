@@ -17,9 +17,9 @@ public class CyclingTransformationsDecorator extends LabelDecoratorBase {
 
     @Override
     public String getText() {
-        cyclingIt = (++cyclingIt) % (textTransformations.size() - 1);
-        return textTransformations.get(cyclingIt)
-            .transform(super.getText());
+        String transformedText = textTransformations.get(cyclingIt).transform(super.getText());
+        cyclingIt = (++cyclingIt) % textTransformations.size();
+        return transformedText;
     }
 
     @Override
