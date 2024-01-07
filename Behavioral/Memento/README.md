@@ -1,6 +1,6 @@
 # Memento
 
-**uUsed to capture and externalize an object's internal state so that the object can be restored to this state later**
+**Used to capture and externalize an object's internal state so that the object can be restored to this state later**
 
 + useful in scenarios where you need to provide an undo mechanism or keep a history of an object's states
 
