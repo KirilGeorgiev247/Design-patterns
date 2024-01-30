@@ -2,13 +2,30 @@ package file;
 
 import file.visitor.DFSFileVisitor;
 
-public class ConcreteFile extends FileBase {
-    public ConcreteFile(String name, long size) {
-        super(name, size);
+import java.io.IOException;
+import java.nio.file.Path;
+
+public class ConcreteFile implements FileBase {
+
+    private String path;
+    private long size;
+    public ConcreteFile(String path, long size) {
+        this.path = path;
+        this.size = size;
     }
 
     @Override
     public void accept(DFSFileVisitor visitor) {
         visitor.walk(this);
+    }
+
+    @Override
+    public long getSize() {
+        return size;
+    }
+
+    @Override
+    public String getPath() {
+        return path;
     }
 }

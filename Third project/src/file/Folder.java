@@ -4,12 +4,17 @@ import file.visitor.DFSFileVisitor;
 
 import java.util.List;
 
-public class Folder extends FileBase {
+public class Folder implements FileBase {
 
     private List<FileBase> children;
 
-    public Folder(String name, long size) {
-        super(name, size);
+    private String name;
+
+    private long size;
+
+    public Folder(String name) {
+        this.name = name;
+        size = 0;
     }
 
     public void addChild(FileBase child) {
@@ -28,5 +33,15 @@ public class Folder extends FileBase {
         for (FileBase child : children) {
             child.accept(visitor);
         }
+    }
+
+    @Override
+    public long getSize() {
+        return size;
+    }
+
+    @Override
+    public String getPath() {
+        return name;
     }
 }

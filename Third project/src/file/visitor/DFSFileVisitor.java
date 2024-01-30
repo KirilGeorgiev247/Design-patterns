@@ -20,7 +20,7 @@ public class DFSFileVisitor implements FileVisitor {
     }
     @Override
     public void walk(ConcreteFile concreteFile) {
-        try(InputStream is = new BufferedInputStream(new FileInputStream(concreteFile.getName()))) {
+        try(InputStream is = new BufferedInputStream(new FileInputStream(concreteFile.getPath()))) {
             String hexChechsum = checksumCalculator.calculate(is);
             // observer
         } catch (IOException e) {

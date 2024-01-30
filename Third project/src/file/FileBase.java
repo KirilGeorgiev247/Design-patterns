@@ -1,22 +1,13 @@
 package file;
 
+import file.builder.FileBuilder;
 import file.visitor.DFSFileVisitor;
 
-public abstract class FileBase {
-    protected String name;
-    protected long size;
+// TODO: Store the file path and the size of the file in bytes.
+public interface FileBase {
+    public void accept(DFSFileVisitor visitor);
 
-    public FileBase(String name, long size) {
-        this.name = name;
-        this.size = size;
-    }
+    public long getSize();
 
-    public String getName() {
-        return name;
-    }
-
-    public long getSize() {
-        return size;
-    }
-    public abstract void accept(DFSFileVisitor visitor);
+    public String getPath();
 }
