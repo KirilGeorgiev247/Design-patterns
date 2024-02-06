@@ -8,9 +8,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class WindowsShortcutBuilder extends SymLinkShortcutBuilder {
-    public WindowsShortcutBuilder() {
-        super();
-    }
     @Override
     public FileBase createFile(Path path) throws IOException {
         try {

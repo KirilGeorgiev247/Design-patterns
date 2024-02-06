@@ -10,9 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class SymbolLinksBuilder extends SymLinkShortcutBuilder {
-    public SymbolLinksBuilder() {
-        super();
-    }
     @Override
     public FileBase createFile(Path path) {
         try {
