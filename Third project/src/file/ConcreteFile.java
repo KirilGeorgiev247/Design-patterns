@@ -1,9 +1,6 @@
 package file;
 
-import file.visitor.DFSFileVisitor;
-
-import java.io.IOException;
-import java.nio.file.Path;
+import file.visitor.FileVisitor;
 
 public class ConcreteFile implements FileBase {
 
@@ -15,7 +12,7 @@ public class ConcreteFile implements FileBase {
     }
 
     @Override
-    public void accept(DFSFileVisitor visitor) {
+    public void accept(FileVisitor visitor) {
         visitor.walk(this);
     }
 

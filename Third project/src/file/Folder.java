@@ -1,6 +1,7 @@
 package file;
 
 import file.visitor.DFSFileVisitor;
+import file.visitor.FileVisitor;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class Folder implements FileBase {
     }
 
     @Override
-    public void accept(DFSFileVisitor visitor) {
+    public void accept(FileVisitor visitor) {
         visitor.walk(this);
 
         for (FileBase child : children) {
