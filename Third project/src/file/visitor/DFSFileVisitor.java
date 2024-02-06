@@ -7,22 +7,22 @@ import file.Folder;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.NoSuchAlgorithmException;
 
 public class DFSFileVisitor implements FileVisitor {
 
-    private ChecksumCalculator checksumCalculator;
+    protected ChecksumCalculator checksumCalculator;
+
+    private String lastChecksum;
     public DFSFileVisitor(ChecksumCalculator checksumCalculator) {
         this.checksumCalculator = checksumCalculator;
     }
     @Override
     public void walk(ConcreteFile concreteFile) {
         try(InputStream is = new BufferedInputStream(new FileInputStream(concreteFile.getPath()))) {
-            String hexChechsum = checksumCalculator.calculate(is);
-            // observer
+            lastChecksum = checksumCalculator.calculate(is);
         } catch (IOException e) {
             throw new RuntimeException(e); // TODO: uncheckedioexc
         } catch (NoSuchAlgorithmException e) {
@@ -35,5 +35,9 @@ public class DFSFileVisitor implements FileVisitor {
         for (FileBase child : folder.getChildren()) {
             child.accept(this);
         }
+    }
+
+    public String getLastChecksum() {
+        return lastChecksum;
     }
 }
