@@ -20,7 +20,7 @@
 
 + to add support for new product types, you must update the factory interface, which means altering the AbstractFactory class and every subclass that inherits from it.
 
-+ all products come back to the client looking the same because they share an interface. The client can't tell them apart or guess their type. If the client needs to do special things with a certain type of product, they can't, because the shared interface doesn't allow it.
++ all products come back to the client looking the same because they share an interface. The client can't tear them apart or guess their type. If the client needs to do special things with a certain type of product, they can't, because the shared interface doesn't allow it.
 
 *Extra*
 
