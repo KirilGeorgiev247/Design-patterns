@@ -5,20 +5,34 @@ import file.FileBase;
 import file.Folder;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RegularFileBuilder implements FileBuilder {
-
-    FileBuilder windowsShortcutBuilder;
-    FileBuilder symLinkBuilder;
-    public RegularFileBuilder() {
-        windowsShortcutBuilder = new WindowsShortcutBuilder();
-        symLinkBuilder = new SymbolLinksBuilder();
+    private static final String WINDOWS_SHORTCUT_EXT = ".lnk";
+    private final FileBuilder windowsShortcutBuilder;
+    private final FileBuilder symLinkBuilder;
+    private Path baseDirectory = null;
+    private final Set<Path> visitedPaths;
+    public RegularFileBuilder(FileBuilder windowsShortcutBuilder, FileBuilder symLinkBuilder) {
+        this.windowsShortcutBuilder = windowsShortcutBuilder;
+        this.symLinkBuilder = symLinkBuilder;
+        visitedPaths = new HashSet<>();
     }
     @Override
     public FileBase createFile(Path path) throws IOException {
+        if (baseDirectory == null) {
+            baseDirectory = path.toAbsolutePath();
+        }
+
+        if (!visitedPaths.add(path.toRealPath())) {
+            throw new IllegalStateException("Cycle detected in symbolic links for: " + path);
+        }
+
         try {
             if (Files.isDirectory(path)) {
                 Folder folder = new Folder(path.getFileName().toString());
@@ -27,7 +41,8 @@ public class RegularFileBuilder implements FileBuilder {
                         if(Files.isSymbolicLink(entry)) {
                             folder.addChild(symLinkBuilder.createFile(entry));
                         } else if (isWindowsShortcut(entry)) {
-                            folder.addChild(windowsShortcutBuilder.createFile(entry));
+                            Path relativePath = path.relativize(entry);
+                            folder.addChild(windowsShortcutBuilder.createFile(relativePath));
                         } else {
                             folder.addChild(createFile(entry));
                         }
@@ -36,13 +51,21 @@ public class RegularFileBuilder implements FileBuilder {
                 return folder;
             }
 
-            return new ConcreteFile(path.getFileName().toString(), Files.size(path));
+            String relativePath = baseDirectory != null ?
+                baseDirectory.getParent().relativize(path).toString() : path.toString();
+            return new ConcreteFile(relativePath, Files.size(path));
         } catch (IOException e) {
-            throw new RuntimeException(e); // TODO: uncheckedexc
+            throw new UncheckedIOException(e.getMessage(), e);
+        } finally {
+            visitedPaths.remove(path.toRealPath());
+
+            if (path.equals(baseDirectory)) {
+                baseDirectory = null;
+            }
         }
     }
 
     private boolean isWindowsShortcut(Path path) {
-        return path.toString().toLowerCase().endsWith(".lnk");
+        return path.toString().toLowerCase().endsWith(WINDOWS_SHORTCUT_EXT);
     }
 }

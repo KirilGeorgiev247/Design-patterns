@@ -1,20 +1,24 @@
 package file;
 
-import file.visitor.DFSFileVisitor;
 import file.visitor.FileVisitor;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Folder implements FileBase {
 
-    private List<FileBase> children;
+    private final List<FileBase> children;
 
-    private String name;
+    private final String path;
 
     private long size;
 
-    public Folder(String name) {
-        this.name = name;
+    public Folder(String path) {
+        children = new ArrayList<>();
+        this.path = path;
         size = 0;
     }
 
@@ -29,8 +33,6 @@ public class Folder implements FileBase {
 
     @Override
     public void accept(FileVisitor visitor) {
-        visitor.walk(this);
-
         for (FileBase child : children) {
             child.accept(visitor);
         }
@@ -43,6 +45,11 @@ public class Folder implements FileBase {
 
     @Override
     public String getPath() {
-        return name;
+        return path;
+    }
+
+    @Override
+    public InputStream getInputStream() throws FileNotFoundException {
+        return new FileInputStream(path);
     }
 }

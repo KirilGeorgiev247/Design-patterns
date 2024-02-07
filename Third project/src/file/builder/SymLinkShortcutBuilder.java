@@ -10,6 +10,6 @@ public abstract class SymLinkShortcutBuilder implements FileBuilder {
 
     public SymLinkShortcutBuilder() {
         this.visitedPaths = new HashSet<>();
-        regularBuilder = new RegularFileBuilder();
+        regularBuilder = new RegularFileBuilder(this, this);
     }
 }

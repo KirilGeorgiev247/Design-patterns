@@ -2,8 +2,12 @@ package file;
 
 import file.visitor.FileVisitor;
 
-public class ConcreteFile implements FileBase {
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Objects;
 
+public class ConcreteFile implements FileBase {
     private String path;
     private long size;
     public ConcreteFile(String path, long size) {
@@ -13,7 +17,7 @@ public class ConcreteFile implements FileBase {
 
     @Override
     public void accept(FileVisitor visitor) {
-        visitor.walk(this);
+        visitor.visit(this);
     }
 
     @Override
@@ -24,5 +28,19 @@ public class ConcreteFile implements FileBase {
     @Override
     public String getPath() {
         return path;
+    }
+
+    @Override
+    public InputStream getInputStream() throws FileNotFoundException {
+        return new FileInputStream(path);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ConcreteFile that = (ConcreteFile) o;
+        return size == that.size &&
+            Objects.equals(path, ((ConcreteFile) o).path);
     }
 }

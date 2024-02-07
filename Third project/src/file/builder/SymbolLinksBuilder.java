@@ -1,11 +1,9 @@
 package file.builder;
 
-import file.ConcreteFile;
 import file.FileBase;
-import file.Folder;
 
 import java.io.IOException;
-import java.nio.file.DirectoryStream;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -21,7 +19,7 @@ public class SymbolLinksBuilder extends SymLinkShortcutBuilder {
 
             return regularBuilder.createFile(targetPath);
         } catch (IOException e) {
-            throw new RuntimeException(e); // TODO: uncheckedexc
+            throw new UncheckedIOException(e.getMessage(), e);
         }
     }
 }

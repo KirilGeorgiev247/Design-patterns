@@ -3,6 +3,7 @@ package file.builder;
 import file.FileBase;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,7 +20,7 @@ public class WindowsShortcutBuilder extends SymLinkShortcutBuilder {
 
             return regularBuilder.createFile(targetPath);
         } catch (IOException e) {
-            throw new RuntimeException(e); // TODO: uncheckedexc
+            throw new UncheckedIOException(e.getMessage(), e);
         }
     }
 
@@ -29,8 +30,7 @@ public class WindowsShortcutBuilder extends SymLinkShortcutBuilder {
             String extracted = parseLink(link);
             return Paths.get(extracted);
         } catch (IOException e) {
-            // TODO: uncheckedExc with proper message
-            throw new IllegalArgumentException("sd", e);
+            throw new UncheckedIOException(e.getMessage(), e);
         }
     }
 
@@ -40,13 +40,6 @@ public class WindowsShortcutBuilder extends SymLinkShortcutBuilder {
 
         // get the file attributes byte
         final int file_atts_offset = 0x18;
-//        byte file_atts = link[file_atts_offset];
-//        byte is_dir_mask = (byte)0x10;
-//        if ((file_atts & is_dir_mask) > 0) {
-//            isDirectory = true;
-//        } else {
-//            isDirectory = false;
-//        }
 
         // if the shell settings are present, skip them
         final int shell_offset = 0x4c;
