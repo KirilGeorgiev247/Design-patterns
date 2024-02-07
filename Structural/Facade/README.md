@@ -16,7 +16,7 @@ subsystem objects in a subsystem - independent way (Example 03)
 
 *pros*
 
-+ offers a simpler, user-friendly interface to a complex subsystem, making it easier for clients to use
++ offers a simpler, user - friendly interface to a complex subsystem, making it easier for clients to use
 
 + reduces dependencies on the subsystem
 
