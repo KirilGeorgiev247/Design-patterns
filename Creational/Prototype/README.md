@@ -27,7 +27,7 @@ object structures contain circular references. (we need deep copy not just copy 
 
 + used when we don't know the type of the class we are copying.
 
-+ in C# and Java we have already implemented interface for this dp.
++ in C# and Java we have already implemented interface for this design pattern.
 
 + problems when unit testing: 
 
