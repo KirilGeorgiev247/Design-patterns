@@ -18,7 +18,7 @@
 
 + allows object that keep everything themselves (unsharing flyweight object)
 
-+ string pool (in JAVA) is an example of the Flyweight Design Pattern (all literal strings and string-valued constant expressions are interned)
++ string pool (in JAVA) is an example of the Flyweight Design Pattern (all literal strings and string - valued constant expressions are interned)
 
 *pros*
 
