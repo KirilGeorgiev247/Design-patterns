@@ -180,6 +180,7 @@ int main()
 
 ```c++
 class X {
+private:
 	int a;
 	int b;
 	int c;
@@ -196,6 +197,7 @@ class X {
 
 	}
 
+public:
 	X& a(int value) { a = value; return *this; }
 	X& b(int value) { b = value; return *this; }
 	X& c(int value) { c = value; return *this; }
