@@ -10,7 +10,7 @@
 
 + objects have intrinsic and extrinsic states
 
-+ we create objects and do not destruct them until the programm terminates, because we want to have them available all the time not creating them every time we need them
++ we create objects and do not destruct them until the programm terminates, because we want to have them available all the time, not to create them every time we need them
 
 + used good with abstract factory (Example 03)
 
