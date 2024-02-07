@@ -26,7 +26,7 @@
 
 + improve system scalability by reducing resource consumption
 
-+ well-suited for systems that need to handle large numbers of objects, making it practical to create object-intensive simulations or applications (like graphical representations, gaming environments)
++ well - suited for systems that need to handle large numbers of objects, making it practical to create object - intensive simulations or applications (like graphical representations, gaming environments)
 
 + reducing the number of expensive objects
 
