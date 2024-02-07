@@ -1,6 +1,6 @@
 ### Flyweight ###
 
-**Use sharing to support large numbers of fine-grained objects efficiently**
+**Uses sharing to support large numbers of fine - grained objects efficiently**
 
 + powerful tool for optimizing memory and performance in systems with many similar objects
 
