@@ -12,7 +12,7 @@
 
 + we create objects and do not destruct them until the programm terminates, because we want to have them available all the time, not to create them every time we need them
 
-+ used good with abstract factory (Example 03)
++ collaborating well with abstract factory (Example 03)
 
 + shared things should be so that noone would want to change them (we rely that they won't be changed or it will be from some central system)
 
