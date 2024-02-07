@@ -1,6 +1,6 @@
 ### Proxy ###
 
-**Provides a stand-in or a substitute for something, managing who can use it**
+**Provides a stand - in or a substitute for something, managing who can use it**
 
 + controlls the accessibility of data
 
@@ -18,7 +18,7 @@
 
 *pros*
 
-+ control access to the real object, making it useful for security and protection purposes
++ controls access to the real object, making it useful for security and protection purposes
 
 + lazy loading
 
@@ -32,7 +32,7 @@
 
 + more complex implementation 
 
-+ Overuse Risk
++ risk of overuse
 
 ## Example 01 ##
 
