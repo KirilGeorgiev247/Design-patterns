@@ -4,7 +4,7 @@
 
 + most often it is singleton because we need just one in our programm.
 
-+ when a system should be configured with one of multiple families of products.
++ when a system should be configured with one out of multiple families of products.
 
 + we hide the logic of how the products are created, and reveal their interfaces not their implementations.
 
