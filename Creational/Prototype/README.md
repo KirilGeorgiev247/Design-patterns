@@ -19,7 +19,7 @@ object.
 *cons* 
 
 + hard part is to implement the Clone operation correctly. It's particularly tricky when
-object structures contain circular references. (we need deep copy not just copy most cases)
+object structures contain circular references. (we need deep copy not just copy in most cases)
 
 *Extra*
 
