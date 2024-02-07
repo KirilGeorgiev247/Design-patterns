@@ -1,34 +1,34 @@
 ### Lazy initialization ###
 
-**The construction of the object is not possible immediately but depends on some parameter whose value is not yet known.**
+**The construction of the object is not immediately possible, but depends on some parameter whose value is not well - known yet.**
 
-+ specific for c++, using the class std::optional will be usually efficient.
++ specific for c++, using the class std::optional is usually efficient.
 
 + provides solution to infinite problems
 
-+ classes can have different implementations on how the process of lazy initialization occurs.
++ classes could have different implementations on how the process of lazy initialization occurs.
 
 *pros*
 
 + **Save Resources**: It saves system resources by creating objects only when they are needed.
 
-+ **Improved Performance**: Can lead to faster application startup times because less work is done upfront.
++ **Improved Performance**: It can lead to faster application startup, because less work is done upfront.
 
 + **Memory Efficient**: It uses memory more efficiently by not holding onto objects that aren't currently needed.
 
 *cons*
 
-+ **Complexity**: Adds complexity to the code because you have to check if the object has been created every time you use it.
++ **Complexity**: Adds complexity to the code because we have to check if the object has been created every time we use it.
 
-+ **Overhead**: Can introduce overhead due to the need for synchronization in multi-threaded environments.
++ **Overhead**: Can introduce overhead due to the need for synchronization in multi - threaded environments.
 
-+ **Unexpected Delays**: Might cause delays later in the program when the object is eventually created.
++ **Unexpected Delays**: Might cause delays later in the program when the object is eventually being created.
 
 *Extra*
 
-+ memoization and lazy initialization can collaborate and also can be mistaken for one another
++ memoization and lazy initialization can collaborate, but also be mistaken with one another
 
-+ for example if we have two matrix and we create third for the multiplication, but this third we don't know how much cells we need, we can use this pattern.
++ for example if we have two matrices and we need to create third for the multiplication, but for the third we don't know how much cells we need, we can use this pattern.
 
 # Example 01 #
 
