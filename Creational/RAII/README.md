@@ -44,8 +44,8 @@ public:
 void test() {
 	int a = new int[10]; // if it throws first leaks
 	int b = new int[20]; // if it throws first and second leak
-	int c = new int[30]; // if it throws f & s & t leak
-	Foo* d = new Foo[100]; // if it throws f & s & t & d leak
+	int c = new int[30]; // if it throws first & ssecond & third leak
+	Foo* d = new Foo[100]; // if it throws first & second & third & forth leak
 
 	FILE* pFile = fopen("asdasdasd.dat", "r+");
 
@@ -57,13 +57,13 @@ void test() {
 
 // --> first fix is with try and catch and in the catch block we free the memory and close opened streams
 // --> second fix is to replace int* with vector<int> and FILE with ifstream -> this is kinda the idea of RAII
-// --> in Java and C# we do not have RAII because of Garbage collector
+// --> in Java and C# we have Garbage collector so we don't have much need of RAII in most cases
 ```
 
 # Example 02 #
 
 ```c++
 class Test {
-	int* data; // vector<int> data;
+	int* data; // vector<int> data; (vector will take care of resource managment)
 };
 ```
