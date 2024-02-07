@@ -2,7 +2,7 @@
 
 **Provides an interface for creating families of related or dependent objects without specifying their concrete classes**
 
-+ often is singleton because we need one in our programm.
++ most often it is singleton because we need just one in our programm.
 
 + when a system should be configured with one of multiple families of products.
 
