@@ -30,7 +30,7 @@
   
 	--> Other fix is to implement release method in the factory or in the object (the factory knows the context)
   
-	--> we can attach on the object refference to the factory but we distrupt the Single Responsibility principle and the life cycle of the object must now outlive the factory.
+	--> we can attach on the object refference to the factory but we might distrupt the Single Responsibility principle and now the life cycle of the object have to outlive the factory.
 
 # Example 01 #
 
