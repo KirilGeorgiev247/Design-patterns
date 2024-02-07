@@ -23,7 +23,7 @@ object structures contain circular references. (we need deep copy not just copy 
 
 *Extra*
 
-+ used in polymorphic jerarchies.
++ used in polymorphic hierarchies.
 
 + used when we don't know the type of the class we are copying.
 
