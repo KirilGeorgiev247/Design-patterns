@@ -1,6 +1,6 @@
 ### Proxy ###
 
-**Provides a stand-in or a substitute for something to manage who or what can use it**
+**Provides a stand-in or a substitute for something, managing who can use it**
 
 + controlls the accessibility of data
 
