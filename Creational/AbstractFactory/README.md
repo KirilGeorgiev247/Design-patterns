@@ -28,7 +28,7 @@
 
 + when we have different configurations
 
-#Example#
+# Example 01
 
 ```c++
 class AbstractFigureFactory {
