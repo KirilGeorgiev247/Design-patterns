@@ -31,7 +31,7 @@ object structures contain circular references. (we need deep copy not just copy 
 
 + problems when unit testing: 
 
-	--> if only one clone of the children has no safety garantee everything down the hierchy will fail. That's why we use try and catch blocks with this pattern.
+	--> if only one clone of the children has no safety garantee everything down the hierarchy will fail. That's why we use try and catch blocks with this pattern.
 
 	--> different functions for equation check may aquire.
 
