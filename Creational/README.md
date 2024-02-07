@@ -1,4 +1,4 @@
-# Creatonal Desing Patterns
+# Creational Desing Patterns
 
 + Creational design patterns separate the details of object creation from the main system, which keeps the system from depending on how objects are made and put together.
 
