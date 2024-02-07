@@ -1,7 +1,7 @@
 ### Facade ###
 
 **Provides a unified interface to a set of interfaces in a subsystem. Facade defines a
-higher-level interface that makes the subsystem easier to use**
+higher - level interface that makes the subsystem easier to use**
 
 + makes strong coupling between interfaces weaker
 
@@ -11,8 +11,8 @@ higher-level interface that makes the subsystem easier to use**
 
 + clients that use the facade don't have to access its subsystem objects directly
 
-+ abstract Factory can be used with Facade to provide an interfacefor creating
-subsystem objectsin a subsystem-independent way (Example 03)
++ abstract factory can be used with Facade to provide an interface for creating
+subsystem objects in a subsystem - independent way (Example 03)
 
 *pros*
 
