@@ -10,13 +10,13 @@ that's constructed.
 
 *pros*
 
-+ provides the director with an abstract interface for constructing the product.
++ provides the client with an abstract interface for constructing the product.
 
-+ improves modularity by encapsulating the way a complex object is constructed and represented. (Like the other creational patterns, the Builder pattern encapsulates how objects get created)
++ improves modularity by encapsulating the way a complex object is constructed and represented. (Like other creational patterns, the Builder pattern encapsulates how objects get created)
 
 *cons*
 
-+ unlike creational patterns that construct products in one shot, the Builder pattern constructs the product step by step under the director's control. And you can't see already constructed parts.
++ unlike creational patterns that construct products in one shot, the Builder pattern constructs the product step by step under the client's control. And we can't be sure what parts have been already constructed.
 
 #Example 01#
 
