@@ -69,7 +69,7 @@ class Builder
 };
 
 // Responsible for the whole process
-class Director
+class Client
 {
     Builder* builder;
 
@@ -152,7 +152,7 @@ int main()
 {
     Car* car; // Final product
 
-    Director director; // Director
+    Client client; // Director
 
     // Concrete builders
     JeepBuilder jeepBuilder;
@@ -160,16 +160,16 @@ int main()
 
     // build a jeep
     std::cout << "Jeep" << std::endl;
-    director.setBuilder(&jeepBuilder);
-    car = director.getCar();
+    client.setBuilder(&jeepBuilder);
+    car = client.getCar();
     car->specifications();
 
     std::cout << std::endl;
 
     // build a nissan
     std::cout << "Nissan" << std::endl;
-    director.setBuilder(&nissanBuilder);
-    car = director.getCar();
+    client.setBuilder(&nissanBuilder);
+    car = client.getCar();
     car->specifications();
 
     return 0;
@@ -201,7 +201,7 @@ class X {
 	X& c(int value) { c = value; return *this; }
 
 	X build() {
-		// created the object;
+		// creates the object;
 	}
 };
 
