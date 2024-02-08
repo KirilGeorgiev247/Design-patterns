@@ -299,7 +299,7 @@ int main() {
 }
 ```
 
-## Example 05 (with composition)##
+## Example 05 (with composition)
 
 ```java
 class Engine {
@@ -354,7 +354,7 @@ public class Main {
 }
 ```
 
-## Example 06 (with composition)##
+## Example 06 (with composition)
 
 ```c++
 class Processor {
