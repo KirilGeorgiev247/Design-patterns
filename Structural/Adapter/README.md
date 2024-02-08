@@ -8,7 +8,7 @@
 
 + adapts one interface to another
 
-+ using multi - inheritance, two - way can provide transparency. They're useful when two different clients want need to view an object differently (Example 03)
++ using multi - inheritance, two - way can provide transparency. They're useful when two different clients need to view an object differently (Example 03)
 
 *pros*
 
