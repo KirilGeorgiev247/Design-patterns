@@ -1,6 +1,6 @@
 # Composite
 
-**Allows you to arrange objects into a tree-like structure to show how they're part of a larger whole. It makes it possible to treat single objects and groups of objects in the same way**
+**Allows you to arrange objects into a tree - like structure to show how they're part of a larger whole. It makes it possible to treat single objects and groups of objects in the same way**
 
 + when you want to represent part - whole hierarchies of objects
 
