@@ -1,6 +1,6 @@
 # Chain Of Responsibility
 
-**Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request**
+**Avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle the request**
 
 + differences between decorator and this design pattern are:
 
