@@ -1,6 +1,6 @@
 # Command
 
-**Turn a request into an object. This allows clients to be set up with various requests, to put requests in a queue or record them, and to make operations that can be undone**
+**Turns a request into an object. This allows clients to be set up with various requests, to put requests in a queue or record them, and to make operations that can be undone**
 
 + commands are an object-oriented replacement for callbacks
 
