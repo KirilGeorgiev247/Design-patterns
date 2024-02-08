@@ -4,7 +4,7 @@
 
 ***
 
-+ we have this pattern implemented in most languages (like C#), but in Java and C++ we do not
++ we have this pattern implemented in most languages (like C# and Java), but in  C++ we do not
 
 + related problems: overload resolution, template instantiation
 
