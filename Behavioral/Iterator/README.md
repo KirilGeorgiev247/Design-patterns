@@ -27,7 +27,7 @@
 
 *cons*
 
-+ a standard way of iterating over different types of collections
++ in some implementations iterators can introduce performance overhead, especially when dealing with collections like tree or hash
 
 ***
 
