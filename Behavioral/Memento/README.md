@@ -24,7 +24,7 @@
 
 + most dynamic languages cannot guarantee that the state within the memento stays untouched(Javascript, Python, ...)
 
-+ caretakers should track the originator's lifecycle to be able to destroy obsolute mementos
++ caretakers should track the originator's lifecycle to be able to destroy obsolete mementos
 
 # Example 01
 
