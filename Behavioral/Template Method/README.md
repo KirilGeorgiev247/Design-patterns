@@ -1,6 +1,6 @@
 # Template method
 
-**defines the skeleton of an algorithm in the superclass, but lets superclasses redefine certain steps of an algorithm without changing structure of the algorithm**
+**Defines the skeleton of an algorithm in the superclass, but lets superclasses redefine certain steps of an algorithm without changing structure of the algorithm**
 
 + example is dfs and bfs in a tree
 
