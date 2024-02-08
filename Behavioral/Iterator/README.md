@@ -10,7 +10,7 @@
 
 + can be inside or outside class, but outside is better (f.e. if we want two iterators at the same time)
 
-+ sometimes is okay if iterator knows about the collection, but this to be done with friend classes(in C++) or packages (in Java and .NET). This communication manipulates the process of knowing the state of each other
++ sometimes is okay if iterator knows about the collection, but this to be done with friend classes(in C++), packages (in Java) or dependencies(in .NET). This communication manipulates the process of knowing the state of each other
 
 + in examples 1 and 2 we get abstraction in cost of performance
 
