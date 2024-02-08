@@ -40,7 +40,7 @@ public abstract class DataProcessor {
     // Template method
     public final void processData() {
         readData();
-        processData();
+        processingData();
         saveData();
     }
 
@@ -49,7 +49,7 @@ public abstract class DataProcessor {
         // Common read data implementation
     }
 
-    private void processData() {
+    private void processingData() {
         System.out.println("Processing data");
         // Common process data implementation
     }
