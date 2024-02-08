@@ -13,8 +13,8 @@ flexible alternative to subclassing for extending functionality**
 
 + ensure dynamically decorating a class by extending it with filters
 
-+ a decorator is different from an adapter in that a decorator only
-changes an object'sresponsibilities,not itsinterface;an adapter will give an object
++ a decorator is different from an adapter in a way that a decorator only
+changes an object's responsibilities, not it's interface. An adapter will give an object
 a completely new interface
 
 *pros*
