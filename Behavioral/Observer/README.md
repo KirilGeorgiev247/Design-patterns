@@ -1,6 +1,6 @@
 # Observer
 
-**Allows an object, known as the subject, to maintain a list of its dependents, called observers, and automatically notify them of any state changes, usually by calling one of their methods. It's a foundational element for achieving a loose coupling between these objects**
+**Allows an object, known as the observable, to maintain a list of its dependents, called observers, and automatically notify them of any state changes, usually by calling one of their methods. It's a foundational element for achieving a loose coupling between these objects**
 
 ***
 
@@ -14,15 +14,15 @@
 
 *pros*
 
-+ the subject doesn't need to know details about the observers. This allows for easy modification and addition of observers without changing the subject
++ the observable doesn't need to know details about the observers. This allows for easy modification and addition of observers without changing the observable
 
 + dynamically add or remove observers without altering the subject's code
 
-+ observers are notified immediately about any changes in the subject, allowing for real-time response
++ observers are notified immediately about any changes in the subject, allowing for real - time response
 
 *cons*
 
-+ keeping a list of observers for each subject can increase memory usage, especially with a large number of observers
++ keeping a list of observers for each observable can increase memory usage, especially with a large number of observers
 
 ***
 
