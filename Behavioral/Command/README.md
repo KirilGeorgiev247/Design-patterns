@@ -26,7 +26,7 @@
 
 *pros*
 
-+ commands are first-class objects. They can be manipulated and extended like any other object
++ commands are first - class objects. They can be manipulated and extended like any other object
 
 + command decouples the object that invokes the operation from the one that knows how to perform it
 
