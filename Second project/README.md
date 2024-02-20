@@ -80,7 +80,7 @@ Replaces (case-sensitive) all occurrences of the string A with the string B, e.g
 
 if A="abc" and B="d", then "⎵abc⎵abcdef" becomes "⎵d_ddef"
 
-aYour solution must not break the existing code, which relies on the Label interface.
+Your solution must not break the existing code, which relies on the Label interface.
 
 ### Tasks
 
