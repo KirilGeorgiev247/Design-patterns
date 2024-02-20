@@ -72,7 +72,7 @@ Labels are bracketed with "-={" and "}=-", e.g.
 
 Censors a specific string W containing L characters by replacing all of its occurrences in the label with L asterisks, e.g.
 
-if W="abc", then "⎵abc⎵def⎵abcdef" becomes "⎵***⎵def⎵***def"
+if W="abc", then "⎵abc⎵def⎵abcdef" becomes "⎵*\**⎵def⎵***def"
 
 + Replace(A,B)
 
